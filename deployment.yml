@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-currency-converter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-currency-converter
+  template:
+    metadata:
+      labels:
+        app: react-currency-converter
+    spec:
+      containers:
+        - name: react-app
+          image: piyushkr07/react-app-currency-converter:latest
+          ports:
+            - containerPort: 80
+
